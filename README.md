@@ -19,6 +19,11 @@ You can alternatively get the electoral districts as CSV:
     $ curl http://postal-code-to-edid-webservice.heroku.com/postal_codes/K0A1K0/csv
     35012,35025,35040,35052,35063,35064,35087
 
+There is even JSONP support:
+
+    $ curl http://postal-code-to-edid-webservice.heroku.com/postal_codes/K0A1K0/jsonp?callback=success
+    success([35012,35025,35040,35052,35063,35064,35087])
+
 Your web site should be able to handle the following errors in case your user inputs an invalid or nonexistent postal code:
 
     $ curl http://postal-code-to-edid-webservice.heroku.com/postal_codes/H0H0H0
