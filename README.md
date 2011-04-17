@@ -4,7 +4,7 @@ Allow your users to find their electoral district based on their postal code by 
 
 # Usage
 
-Sending a request, as below, returns the electoral districts within a postal code as JSON. Because electoral districts change names regularly, we return the unchanging ID used by Elections Canada, which you can then map to a district name:
+Sending a request, as below, returns the electoral districts within a postal code as JSON. Because electoral districts change names regularly, we return the unchanging ID used by Elections Canada, which you can then map to a district name. Official district names are available at [Elections Canada](http://elections.ca/content.aspx?section=res&dir=cir/list&document=index&lang=e#change), which are cached here as [TSV](https://github.com/jpmckinney/postal_code_to_edid_webservice/blob/master/riding-names.tsv) (tab-separated value).
 
     $ curl http://postal-code-to-edid-webservice.heroku.com/postal_codes/A1A1A1
     ["10007"]
