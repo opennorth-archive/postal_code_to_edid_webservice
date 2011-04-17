@@ -2,6 +2,7 @@ source :rubygems
 gem 'sinatra'
 gem 'dm-core'
 gem 'dm-migrations'
+gem 'fog'
 gem 'govkit-ca'
 gem 'json'
 
