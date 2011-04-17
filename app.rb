@@ -8,17 +8,21 @@ require 'json'
 class Assignment
   include DataMapper::Resource
   property :id, Serial
-  property :postal_code, String
+  property :postal_code, String, :index => true
   property :edid, Integer
 
   def self.find_electoral_districts_by_postal_code(postal_code)
     cache = all(:postal_code => postal_code)
     if cache.empty?
-      cache = GovKit::CA::PostalCode.find_electoral_districts_by_postal_code(postal_code).map do |edid|
-        create(:postal_code => postal_code, :edid => edid)
+      begin
+        cache = GovKit::CA::PostalCode.find_electoral_districts_by_postal_code(postal_code).map do |edid|
+          create(:postal_code => postal_code, :edid => edid)
+        end
+      rescue GovKit::CA::ResourceNotFound
+        cache = [create(:postal_code => postal_code)]
       end
     end
-    cache.map(&:edid)
+    cache.map(&:edid).compact
   end
 end
 
@@ -35,10 +39,12 @@ get '/postal_codes/:postal_code' do
     response.headers['Cache-Control'] = 'public, max-age=86400' # one day
     content_type :json
     postal_code = GovKit::CA::PostalCode.format_postal_code(params[:postal_code])
-    # call :to_s to maintain backwards-compatibility with old service
-    Assignment.find_electoral_districts_by_postal_code(postal_code).map(&:to_s).to_json
-  rescue GovKit::CA::ResourceNotFound
-    error 404, {'error' => 'Postal code could not be resolved', 'link' => "http://www.elections.ca/scripts/pss/FindED.aspx?PC=#{postal_code}&amp;image.x=0&amp;image.y=0"}.to_json
+    electoral_districts = Assignment.find_electoral_districts_by_postal_code(postal_code)
+    if electoral_districts.empty?
+      error 404, {'error' => 'Postal code could not be resolved', 'link' => "http://www.elections.ca/scripts/pss/FindED.aspx?PC=#{postal_code}&amp;image.x=0&amp;image.y=0"}.to_json
+    else
+      electoral_districts.map(&:to_s).to_json # call :to_s for backwards-compatibility
+    end
   rescue GovKit::CA::InvalidRequest
     error 400, {'error' => 'Postal code invalid'}.to_json
   end
