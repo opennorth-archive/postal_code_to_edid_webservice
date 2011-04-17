@@ -29,7 +29,7 @@ Your web site should be able to handle the following errors in case your user in
 
 # Deployment
 
-You can run your own copy of this web service if you like. You just need an environment in which Rack apps can run, like Passenger, Mongrel, Thin, Unicorn, etc. This web service currently runs on Heroku, which you can deploy like:
+You can run your own copy of this web service if you like. You just need an environment in which Rack apps can run, like Passenger, Mongrel, Thin, Unicorn, etc. This web service currently runs on [Heroku](http://heroku.com/), which, assuming you have the Heroku gem installed, you can deploy like:
 
     git clone http://github.com/jpmckinney/postal_code_to_edid_webservice.git
     heroku create MY_APP_NAME
