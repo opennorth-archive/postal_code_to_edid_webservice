@@ -4,6 +4,7 @@ require 'dm-migrations'
 require 'govkit-ca'
 require 'json'
 
+# Currently caches postal code lookups forever. Should expire them on a schedule.
 class Assignment
   include DataMapper::Resource
   property :id, Serial
@@ -34,7 +35,8 @@ get '/postal_codes/:postal_code' do
     response.headers['Cache-Control'] = 'public, max-age=86400' # one day
     content_type :json
     postal_code = GovKit::CA::PostalCode.format_postal_code(params[:postal_code])
-    Assignment.find_electoral_districts_by_postal_code(postal_code).map(&:to_s).to_json # backwards-compatibility with old service
+    # call :to_s to maintain backwards-compatibility with old service
+    Assignment.find_electoral_districts_by_postal_code(postal_code).map(&:to_s).to_json
   rescue GovKit::CA::ResourceNotFound
     error 404, {'error' => 'Postal code could not be resolved', 'link' => "http://www.elections.ca/scripts/pss/FindED.aspx?PC=#{postal_code}&amp;image.x=0&amp;image.y=0"}.to_json
   rescue GovKit::CA::InvalidRequest
