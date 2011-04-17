@@ -42,6 +42,6 @@ You can run your own copy of this web service if you like. You just need an envi
 
 # About
 
-This web service is powered by James McKinney's [GovKit-CA](http://github.com/jpmckinney/govkit-ca#readme) gem. For more information on how this web service determines electoral districts from postal codes, please see that project's page. Credit to [Daniel Haran](https://github.com/danielharan) for the [first version](http://github.com/danielharan/postal_code_to_edid_webservice) of this web service.
+This web service is powered by James McKinney's [GovKit-CA](https://github.com/jpmckinney/govkit-ca#readme) gem. For more information on how this web service determines electoral districts from postal codes, please see that project's page. Credit to [Daniel Haran](https://github.com/danielharan) for the [first version](http://github.com/danielharan/postal_code_to_edid_webservice) of this web service.
 
 Copyright (c) 2011 James McKinney, released under the MIT license
