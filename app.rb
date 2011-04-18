@@ -15,8 +15,9 @@ get '/' do
 end
 
 get '/postal_codes/:postal_code' do
+  content_type :json
+
   begin
-    content_type :json
     find_electoral_districts_by_postal_code(params[:postal_code])
     if @electoral_districts.empty?
       error 404, {'error' => 'Postal code could not be resolved', 'link' => "http://www.elections.ca/scripts/pss/FindED.aspx?PC=#{@postal_code}&amp;image.x=0&amp;image.y=0"}.to_json
@@ -29,10 +30,11 @@ get '/postal_codes/:postal_code' do
 end
 
 get '/postal_codes/:postal_code/jsonp' do
+  content_type :js
+  callback = %w(callback jscallback jsonp jsoncallback).find{|x| params[x]}
+
   begin
-    content_type :js
     find_electoral_districts_by_postal_code(params[:postal_code])
-    callback = %w(callback jscallback jsonp jsoncallback).find{|x| params[x]}
     if @electoral_districts.empty?
       error 404, "#{callback}(#{{'error' => 'Postal code could not be resolved', 'link' => "http://www.elections.ca/scripts/pss/FindED.aspx?PC=#{@postal_code}&amp;image.x=0&amp;image.y=0"}.to_json})"
     else
@@ -44,8 +46,9 @@ get '/postal_codes/:postal_code/jsonp' do
 end
 
 get '/postal_codes/:postal_code/csv' do
+  content_type :csv
+
   begin
-    content_type :csv
     find_electoral_districts_by_postal_code(params[:postal_code])
     if @electoral_districts.empty?
       error 404, "Postal code could not be resolved"
