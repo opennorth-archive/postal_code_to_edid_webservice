@@ -31,7 +31,7 @@ end
 
 get '/postal_codes/:postal_code/jsonp' do
   content_type :js
-  callback = %w(callback jscallback jsonp jsoncallback).find{|x| params[x]}
+  callback = params[%w(callback jscallback jsonp jsoncallback).find{|x| params[x]}]
 
   begin
     find_electoral_districts_by_postal_code(params[:postal_code])
