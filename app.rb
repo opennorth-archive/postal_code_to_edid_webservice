@@ -10,6 +10,14 @@ def find_electoral_districts_by_postal_code(postal_code)
   @electoral_districts = Assignment.find_electoral_districts_by_postal_code(@postal_code)
 end
 
+before do
+  if request.request_method == 'OPTIONS'
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    response.headers['Access-Control-Allow-Methods'] = 'POST, GET, OPTIONS'
+    halt 200
+  end
+end
+
 get '/' do
   erb :index
 end
