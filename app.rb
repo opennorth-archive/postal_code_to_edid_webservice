@@ -36,12 +36,12 @@ get '/postal_codes/:postal_code/jsonp' do
   begin
     find_electoral_districts_by_postal_code(params[:postal_code])
     if @electoral_districts.empty?
-      error 404, "#{callback}(#{{'error' => 'Postal code could not be resolved', 'link' => "http://www.elections.ca/scripts/pss/FindED.aspx?PC=#{@postal_code}&amp;image.x=0&amp;image.y=0"}.to_json})"
+      error 200, "#{callback}(#{{'error' => 'Postal code could not be resolved', 'link' => "http://www.elections.ca/scripts/pss/FindED.aspx?PC=#{@postal_code}&amp;image.x=0&amp;image.y=0"}.to_json})"
     else
       "#{callback}(#{@electoral_districts.to_json})"
     end
   rescue GovKit::CA::InvalidRequest
-    error 400, "#{callback}(#{{'error' => 'Postal code invalid'}.to_json})"
+    error 200, "#{callback}(#{{'error' => 'Postal code invalid'}.to_json})"
   end
 end
 
