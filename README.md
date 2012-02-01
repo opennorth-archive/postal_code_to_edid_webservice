@@ -13,10 +13,10 @@ unchanging ID used by Elections Canada, which you can then map to a district
 name. Official district names are available at
 [Elections Canada](http://elections.ca/content.aspx?section=res&dir=cir/list&document=index&lang=e#change),
 which are cached here as
-[riding-names.csv](https://github.com/jpmckinney/postal_code_to_edid_webservice/blob/master/riding-names.csv).
+[riding-names.csv](https://github.com/opennorth/postal_code_to_edid_webservice/blob/master/riding-names.csv).
 Microsoft Excel doesn't support CSVs containing UTF-8 characters; if you would
 like to open this file in Excel, open
-[riding-names.tsv](https://github.com/jpmckinney/postal_code_to_edid_webservice/blob/master/riding-names.tsv)
+[riding-names.tsv](https://github.com/opennorth/postal_code_to_edid_webservice/blob/master/riding-names.tsv)
 instead.
 
     $ curl http://postal-code-to-edid-webservice.heroku.com/postal_codes/A1A1A1
@@ -52,18 +52,18 @@ environment in which Rack apps can run, like Passenger, Mongrel, Thin, Unicorn,
 etc. This web service currently runs on [Heroku](http://heroku.com/), which,
 assuming you have the Heroku gem installed, you can deploy like:
 
-    git clone http://github.com/jpmckinney/postal_code_to_edid_webservice.git
+    git clone http://github.com/opennorth/postal_code_to_edid_webservice.git
     heroku create MY_APP_NAME
     git push heroku master
 
 # About
 
-This web service is powered by James McKinney's 
-[GovKit-CA](https://github.com/jpmckinney/govkit-ca#readme) gem. For more
+This web service is powered by Open North's 
+[GovKit-CA](https://github.com/opennorth/govkit-ca#readme) gem. For more
 information on how this web service determines electoral districts from postal
 codes, please see that project's page. Credit to
 [Daniel Haran](https://github.com/danielharan) for the
 [first version](http://github.com/danielharan/postal_code_to_edid_webservice)
 of this web service.
 
-Copyright (c) 2011 James McKinney, released under the MIT license
+Copyright (c) 2011 Open North, released under the MIT license
