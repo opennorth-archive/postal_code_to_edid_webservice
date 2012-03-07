@@ -7,8 +7,8 @@ class Assignment
   property :postal_code, String, :index => true
   property :edid, Integer
 
-  def self.find_electoral_districts_by_postal_code(postal_code)
-    cache = all(:postal_code => postal_code)
+  def self.find_electoral_districts_by_postal_code(postal_code, fresh = false)
+    cache = fresh ? [] : all(:postal_code => postal_code)
     if cache.empty?
       begin
         cache = GovKit::CA::PostalCode.find_electoral_districts_by_postal_code(postal_code).map do |edid|

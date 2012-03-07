@@ -7,7 +7,7 @@ require File.join(File.dirname(__FILE__), 'assignment')
 def find_electoral_districts_by_postal_code(postal_code)
   response.headers['Cache-Control'] = 'public, max-age=86400' # one day
   @postal_code = GovKit::CA::PostalCode.format_postal_code(postal_code)
-  @electoral_districts = Assignment.find_electoral_districts_by_postal_code(@postal_code)
+  @electoral_districts = Assignment.find_electoral_districts_by_postal_code(@postal_code, params[:fresh])
 end
 
 before do
