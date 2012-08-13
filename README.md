@@ -14,10 +14,7 @@ name. Official district names are available at
 [Elections Canada](http://elections.ca/content.aspx?section=res&dir=cir/list&document=index&lang=e#change),
 which are cached here as
 [riding-names.csv](https://github.com/opennorth/postal_code_to_edid_webservice/blob/master/riding-names.csv).
-Microsoft Excel doesn't support CSVs containing UTF-8 characters; if you would
-like to open this file in Excel, open
-[riding-names.tsv](https://github.com/opennorth/postal_code_to_edid_webservice/blob/master/riding-names.tsv)
-instead.
+Microsoft Excel doesn't support CSVs containing UTF-8 characters.
 
     $ curl http://postal-code-to-edid-webservice.heroku.com/postal_codes/A1A1A1
     ["10007"]
