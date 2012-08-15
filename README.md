@@ -63,4 +63,4 @@ codes, please see that project's page. Credit to
 [first version](http://github.com/danielharan/postal_code_to_edid_webservice)
 of this web service.
 
-Copyright (c) 2011 Open North, released under the MIT license
+Copyright (c) 2011 Open North Inc., released under the MIT license
