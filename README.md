@@ -1,5 +1,7 @@
 # Postal Code to Electoral District Web Service
 
+[![Dependency Status](https://gemnasium.com/opennorth/postal_code_to_edid_webservice.png)](https://gemnasium.com/opennorth/postal_code_to_edid_webservice)
+
 Allow your users to find their electoral district based on their postal code by
 integrating this web service into your web site. From an electoral district, you
 can determine the user's Member of Parliament, voting poll, and other
