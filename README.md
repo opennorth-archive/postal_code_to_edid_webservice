@@ -7,7 +7,7 @@ integrating this web service into your web site. From an electoral district, you
 can determine the user's Member of Parliament, voting poll, and other
 information.
 
-# Usage
+## Usage
 
 Sending a request, as below, returns the electoral districts within a postal
 code as JSON. Because electoral districts change names regularly, we return the
@@ -44,7 +44,7 @@ Your web site should be able to handle the following errors in case your user in
     $ curl http://postal-code-to-edid-webservice.heroku.com/postal_codes/Z1Z1Z1
     {"error":"Postal code invalid"}
 
-# Deployment
+## Deployment
 
 You can run your own copy of this web service if you like. You just need an
 environment in which Rack apps can run, like Passenger, Mongrel, Thin, Unicorn,
@@ -55,7 +55,7 @@ assuming you have the Heroku gem installed, you can deploy like:
     heroku create MY_APP_NAME
     git push heroku master
 
-# About
+## About
 
 This web service is powered by Open North's 
 [GovKit-CA](https://github.com/opennorth/govkit-ca#readme) gem. For more
@@ -64,5 +64,9 @@ codes, please see that project's page. Credit to
 [Daniel Haran](https://github.com/danielharan) for the
 [first version](http://github.com/danielharan/postal_code_to_edid_webservice)
 of this web service.
+
+## Bugs? Questions?
+
+The main repository is on GitHub: [http://github.com/opennorth/postal_code_to_edid_webservice](http://github.com/opennorth/postal_code_to_edid_webservice), where your contributions, forks, bug reports, feature requests, and feedback are greatly welcomed.
 
 Copyright (c) 2011 Open North Inc., released under the MIT license
