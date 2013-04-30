@@ -4,7 +4,7 @@ gem 'thin'
 gem 'dm-core'
 gem 'dm-migrations'
 gem 'fog'
-gem 'govkit-ca', '0.0.4'
+gem 'govkit-ca'
 gem 'json'
 
 group :production do
