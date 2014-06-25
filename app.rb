@@ -2,6 +2,8 @@ require 'sinatra'
 require 'govkit-ca'
 require 'json'
 
+set :protection, :except => [:json_csrf]
+
 require File.join(File.dirname(__FILE__), 'assignment')
 
 def find_electoral_districts_by_postal_code(postal_code)
