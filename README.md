@@ -20,30 +20,30 @@ which are cached here as
 [riding-names.csv](https://github.com/opennorth/postal_code_to_edid_webservice/blob/master/riding-names.csv).
 Microsoft Excel doesn't support CSVs containing UTF-8 characters.
 
-    $ curl http://postal-code-to-edid-webservice.heroku.com/postal_codes/A1A1A1
+    $ curl http://postal-code-to-edid-webservice.herokuapp.com/postal_codes/A1A1A1
     ["10007"]
 
 It also works if a postal code contains multiple electoral districts:
 
-    $ curl http://postal-code-to-edid-webservice.heroku.com/postal_codes/K0A1K0
+    $ curl http://postal-code-to-edid-webservice.herokuapp.com/postal_codes/K0A1K0
     ["35012","35025","35040","35052","35063","35064","35087"]
 
 You can alternatively get the electoral districts as CSV:
 
-    $ curl http://postal-code-to-edid-webservice.heroku.com/postal_codes/K0A1K0/csv
+    $ curl http://postal-code-to-edid-webservice.herokuapp.com/postal_codes/K0A1K0/csv
     35012,35025,35040,35052,35063,35064,35087
 
 There is even JSONP support:
 
-    $ curl http://postal-code-to-edid-webservice.heroku.com/postal_codes/K0A1K0/jsonp?callback=success
+    $ curl http://postal-code-to-edid-webservice.herokuapp.com/postal_codes/K0A1K0/jsonp?callback=success
     success([35012,35025,35040,35052,35063,35064,35087])
 
 Your web site should be able to handle the following errors in case your user inputs an invalid or nonexistent postal code:
 
-    $ curl http://postal-code-to-edid-webservice.heroku.com/postal_codes/H0H0H0
+    $ curl http://postal-code-to-edid-webservice.herokuapp.com/postal_codes/H0H0H0
     {"error":"Postal code could not be resolved","link":"http://www.elections.ca/scripts/pss/FindED.aspx?PC=H0H0H0&amp;image.x=0&amp;image.y=0"}
 
-    $ curl http://postal-code-to-edid-webservice.heroku.com/postal_codes/Z1Z1Z1
+    $ curl http://postal-code-to-edid-webservice.herokuapp.com/postal_codes/Z1Z1Z1
     {"error":"Postal code invalid"}
 
 ## Deployment
