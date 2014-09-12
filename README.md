@@ -1,6 +1,6 @@
 # Postal Code to Electoral District Web Service
 
-[![Dependency Status](https://gemnasium.com/opennorth/postal_code_to_edid_webservice.png)](https://gemnasium.com/opennorth/postal_code_to_edid_webservice)
+[![Dependency Status](https://gemnasium.com/opennorth-archive/postal_code_to_edid_webservice.png)](https://gemnasium.com/opennorth-archive/postal_code_to_edid_webservice)
 
 **NOTICE: This service is deprecated. Please use [Represent](http://represent.opennorth.ca/).**
 
@@ -17,7 +17,7 @@ unchanging ID used by Elections Canada, which you can then map to a district
 name. Official district names are available at
 [Elections Canada](http://elections.ca/content.aspx?section=res&dir=cir/list&document=index&lang=e#change),
 which are cached here as
-[riding-names.csv](https://github.com/opennorth/postal_code_to_edid_webservice/blob/master/riding-names.csv).
+[riding-names.csv](https://github.com/opennorth-archive/postal_code_to_edid_webservice/blob/master/riding-names.csv).
 Microsoft Excel doesn't support CSVs containing UTF-8 characters.
 
     $ curl http://postal-code-to-edid-webservice.herokuapp.com/postal_codes/A1A1A1
@@ -53,7 +53,7 @@ environment in which Rack apps can run, like Passenger, Mongrel, Thin, Unicorn,
 etc. This web service currently runs on [Heroku](http://heroku.com/), which,
 assuming you have the Heroku gem installed, you can deploy like:
 
-    git clone http://github.com/opennorth/postal_code_to_edid_webservice.git
+    git clone http://github.com/opennorth-archive/postal_code_to_edid_webservice.git
     heroku create MY_APP_NAME
     git push heroku master
 
@@ -69,6 +69,6 @@ of this web service.
 
 ## Bugs? Questions?
 
-The main repository is on GitHub: [http://github.com/opennorth/postal_code_to_edid_webservice](http://github.com/opennorth/postal_code_to_edid_webservice), where your contributions, forks, bug reports, feature requests, and feedback are greatly welcomed.
+The main repository is on GitHub: [http://github.com/opennorth-archive/postal_code_to_edid_webservice](http://github.com/opennorth-archive/postal_code_to_edid_webservice), where your contributions, forks, bug reports, feature requests, and feedback are greatly welcomed.
 
 Copyright (c) 2011 Open North Inc., released under the MIT license
