@@ -2,6 +2,21 @@ require 'sinatra'
 require 'govkit-ca'
 require 'json'
 
+GovKit::CA::PostalCode::StrategySet.register(GovKit::CA::PostalCode::Strategy::ElectionsCa)
+GovKit::CA::PostalCode::StrategySet.register(GovKit::CA::PostalCode::Strategy::LiberalCa)
+GovKit::CA::PostalCode::StrategySet.register(GovKit::CA::PostalCode::Strategy::NDPCa)
+
+# 2014-02-12: Unavailable. Check next election.
+# GovKit::CA::PostalCode::StrategySet.register(GovKit::CA::PostalCode::Strategy::CBCCa)
+# 2015-01-05: H0H0H0 should be invalid.
+# GovKit::CA::PostalCode::StrategySet.register(GovKit::CA::PostalCode::Strategy::GreenPartyCa)
+# 2015-01-05: Too many ridings.
+# GovKit::CA::PostalCode::StrategySet.register(GovKit::CA::PostalCode::Strategy::DigitalCopyrightCa)
+# Only riding name and not implemented.
+# GovKit::CA::PostalCode::StrategySet.register(GovKit::CA::PostalCode::Strategy::ParlGcCa)
+# Only riding name if not held by a Conservative MP.
+# GovKit::CA::PostalCode::StrategySet.register(GovKit::CA::PostalCode::Strategy::ConservativeCa)
+
 set :protection, :except => [:json_csrf]
 
 require File.join(File.dirname(__FILE__), 'assignment')
