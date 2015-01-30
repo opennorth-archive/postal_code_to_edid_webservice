@@ -2,7 +2,7 @@
 
 [![Dependency Status](https://gemnasium.com/opennorth-archive/postal_code_to_edid_webservice.png)](https://gemnasium.com/opennorth-archive/postal_code_to_edid_webservice)
 
-**NOTICE: This service is deprecated. Please use [Represent](http://represent.opennorth.ca/).**
+**NOTICE: This service is deprecated. Please use [Represent](https://represent.opennorth.ca/).**
 
 Allow your users to find their electoral district based on their postal code by
 integrating this web service into your web site. From an electoral district, you
