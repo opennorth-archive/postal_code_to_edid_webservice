@@ -67,8 +67,4 @@ codes, please see that project's page. Credit to
 [first version](https://github.com/danielharan/postal_code_to_edid_webservice)
 of this web service.
 
-## Bugs? Questions?
-
-The main repository is on GitHub: [https://github.com/opennorth-archive/postal_code_to_edid_webservice](https://github.com/opennorth-archive/postal_code_to_edid_webservice), where your contributions, forks, bug reports, feature requests, and feedback are greatly welcomed.
-
 Copyright (c) 2011 Open North Inc., released under the MIT license
