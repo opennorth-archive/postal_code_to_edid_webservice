@@ -122,31 +122,34 @@ run Sinatra::Application
 __END__
 @@index
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta content="text/html;charset=utf-8" http-equiv="content-type">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Free &amp; Open Source Postal Code to Electoral District Web Service</title>
   <style type="text/css">
-  #container {
-    width: 45em;
-    margin: 100px auto 0 auto;
-    font-family: Arial, sans-serif;
-  }
-  ul {
-    list-style: none;
-    padding-left: 0;
-  }
-  p {
-    margin-bottom: 0;
-  }
+    #container {
+      width: 45em;
+      margin: 0 auto;
+      font-family: helvetica, sans-serif;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    p {
+      margin-bottom: 0;
+    }
   </style>
 </head>
 
 <body>
   <div id="container">
     <h1>Postal Code to Electoral District API</h1>
+
     <h2>Deprecation Notice</h2>
     <p>You are strongly encouraged to use <a href="https://represent.opennorth.ca/">Represent</a> instead.</p>
+
     <h2>Examples</h2>
     <ul>
       <li>
@@ -166,6 +169,7 @@ __END__
         <a href="/postal_codes/K0A1K0/jsonp?callback=success">https://postal-code-to-edid-webservice.herokuapp.com/postal_codes/K0A1K0/jsonp?callback=success</a>
       </li>
     </ul>
+
     <h2>Documentation</h2>
     <p>The API returns the IDs used by Elections Canada to represent electoral districts. For more documentation, <a href="https://github.com/opennorth-archive/postal_code_to_edid_webservice#readme">see here</a>.</p>
   </div>
