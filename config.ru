@@ -51,10 +51,12 @@ GovKit::CA::PostalCode::StrategySet.register(GovKit::CA::PostalCode::Strategy::N
 
 set :protection, except: [:json_csrf]
 
-def find_electoral_districts_by_postal_code(postal_code)
-  response.headers['Cache-Control'] = 'public, max-age=86400' # one day
-  @postal_code = GovKit::CA::PostalCode.format_postal_code(postal_code)
-  @electoral_districts = Assignment.find_electoral_districts_by_postal_code(@postal_code, params[:fresh])
+helpers do
+  def find_electoral_districts_by_postal_code(postal_code)
+    response.headers['Cache-Control'] = 'public, max-age=86400' # one day
+    @postal_code = GovKit::CA::PostalCode.format_postal_code(postal_code)
+    @electoral_districts = Assignment.find_electoral_districts_by_postal_code(@postal_code, params[:fresh])
+  end
 end
 
 before do
@@ -149,19 +151,19 @@ __END__
     <ul>
       <li>
         <p>A postal code containing a single electoral district:</p>
-        <a href="https://postal-code-to-edid-webservice.herokuapp.com/postal_codes/A1A1A1">https://postal-code-to-edid-webservice.herokuapp.com/postal_codes/A1A1A1</a>
+        <a href="/postal_codes/A1A1A1">https://postal-code-to-edid-webservice.herokuapp.com/postal_codes/A1A1A1</a>
       </li>
       <li>
         <p>A postal code containing multiple electoral districts:</p>
-        <a href="https://postal-code-to-edid-webservice.herokuapp.com/postal_codes/K0A1K0">https://postal-code-to-edid-webservice.herokuapp.com/postal_codes/K0A1K0</a>
+        <a href="/postal_codes/K0A1K0">https://postal-code-to-edid-webservice.herokuapp.com/postal_codes/K0A1K0</a>
       </li>
       <li>
         <p>You can also get the electoral districts in CSV format:</p>
-        <a href="https://postal-code-to-edid-webservice.herokuapp.com/postal_codes/K0A1K0/csv">https://postal-code-to-edid-webservice.herokuapp.com/postal_codes/K0A1K0/csv</a>
+        <a href="/postal_codes/K0A1K0/csv">https://postal-code-to-edid-webservice.herokuapp.com/postal_codes/K0A1K0/csv</a>
       </li>
       <li>
         <p>Or as JSONP for cross-domain AJAX requests:</p>
-        <a href="https://postal-code-to-edid-webservice.herokuapp.com/postal_codes/K0A1K0/jsonp?callback=success">https://postal-code-to-edid-webservice.herokuapp.com/postal_codes/K0A1K0/jsonp?callback=success</a>
+        <a href="/postal_codes/K0A1K0/jsonp?callback=success">https://postal-code-to-edid-webservice.herokuapp.com/postal_codes/K0A1K0/jsonp?callback=success</a>
       </li>
     </ul>
     <h2>Documentation</h2>
