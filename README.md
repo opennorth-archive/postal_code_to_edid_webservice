@@ -6,7 +6,7 @@
 
 This service receives a postal code and returns the federal electoral districts matching the postal code as JSON. Since electoral districts change names regularly, we return the unchanging ID used by Elections Canada, which you can then map to a name.
 
-Names are available at [Elections Canada](http://elections.ca/content.aspx?section=res&dir=cir/list&document=index&lang=e#change), which are cached here as [riding-names.csv](https://github.com/opennorth/postal_code_to_edid_webservice/blob/master/riding-names.csv). (Note: Microsoft Excel doesn't support CSVs containing UTF-8 characters.)
+Names are available at [Elections Canada](http://elections.ca/content.aspx?section=res&dir=cir/list&document=index&lang=e#change).
 
 A postal code matching a single electoral district:
 
