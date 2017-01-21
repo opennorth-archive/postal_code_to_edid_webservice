@@ -30,12 +30,12 @@ GEM
     httparty (0.10.2)
       multi_json (~> 1.0)
       multi_xml (>= 0.5.2)
-    mini_portile2 (2.0.0)
+    mini_portile2 (2.1.0)
     multi_json (1.11.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
-    nokogiri (1.6.7.2)
-      mini_portile2 (~> 2.0.0.rc2)
+    nokogiri (1.6.8.1)
+      mini_portile2 (~> 2.1.0)
     rack (1.6.2)
     rack-protection (1.5.3)
       rack
@@ -57,4 +57,4 @@ DEPENDENCIES
   sinatra
 
 BUNDLED WITH
-   1.10.6
+   1.11.2
